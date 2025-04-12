@@ -10,6 +10,12 @@ floor_plans = {
     "SJ2 04": "static/floor_plans/SJ2.04.jpg",
     "SJ2 09": "static/floor_plans/SJ2.09.jpg",
     "SJ2 17": "static/floor_plans/SJ2.17.jpg",
+
+    "SJ3 01": "static/floor_plans/SJ3.01.jpg",
+    "SJ3 03": "static/floor_plans/SJ3.03.jpg",
+    "SJ3 04": "static/floor_plans/SJ3.04.jpg",
+    "SJ3 18": "static/floor_plans/SJ3.018.jpg",
+    "SJ3 19": "static/floor_plans/SJ3.19.jpg",
     # More room codes to be added
 }
 
