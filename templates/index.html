@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Indoor Navigation</title>
+
+    <style>
+    *{
+margin: 0;
+padding: 0;
+}
+
+#h1{
+text-align: center;
+}
+  nav{
+  background-color: #0d6efd;
+        padding: 3%;
+        margin-bottom: 5%;
+        }
+
+  #searchcontainer{
+  margin: 5%;
+  display:flex;
+  flex-direction: row;
+  justify-content: center;
+  display: inline;
+     padding-top: 2%;
+}
+
+#room-code{
+   width: 500px;
+  padding: 2%;
+  border:none;
+  border: 1px solid black;
+  border-radius: 45px;
+}
+
+
+   .contain{
+        height: 68vh;
+        padding: 10px;
+        width: 800px;
+        margin: auto;
+        margin-top: 1.5%;
+
+
+        border: 1px solid black;
+        border-bottom: 0px;
+
+        border-radius: 15px;
+      
+        }
+
+.centerinputfield{
+         padding: 50px;
+        display:flex;
+        justify-content: center;
+        display: inline;
+        }
+#button{
+        padding: 2%;
+        border: none;
+        border: 1px solid black;
+        border-radius: 45px;
+        transition: .3s;
+        }
+
+   #button:hover{
+        color: white;
+        background: #0d6efd;
+        }
+.container{
+        display: flex;
+        justify-content: center;
+        }
+
+
+
+
+
+
+
+    </style>
+</head>
+<body>
+<nav>
+    <h1 id="h1">Indoor Room Navigation</h1>
+</nav>
+<div class="container">
+<div class="contain">
+    <div id="searchcontainer">
+    <form id="search-form">
+<div class="centerinputfield">
+        <input type="text" id="room-code" name="room-code" placeholder="Enter Room Code" required>
+        <button type="submit" id="button">Search</button>
+</div>
+    </form>
+        </div>
+    <div id="floor-plan-container" style="display: none;">
+        <h2>Floor Plan:</h2>
+        <img id="floor-plan" src="" alt="Floor Plan" style="max-width: 100%; display: block;">
+    </div>
+</div>
+</div>
+    <script>
+        document.getElementById("search-form").onsubmit = function (event) {
+            event.preventDefault();
+            const roomCode = document.getElementById("room-code").value;
+            fetch(`/get_floor_plan/${roomCode}`)
+                .then(response => response.json())
+                .then(data => {
+                    const floorPlanContainer = document.getElementById("floor-plan-container");
+                    if (data.image_path) {
+                        document.getElementById("floor-plan").src = data.image_path;
+                        floorPlanContainer.style.display = "block";
+                    } else {
+                        alert("Room not found or floor plan unavailable.");
+                    }
+                });
+        };
+    </script>
+</body>
+</html>
