@@ -16,7 +16,11 @@ floor_plans = {
     "SJ3 04": "static/floor_plans/SJ3.04.jpg",
     "SJ3 18": "static/floor_plans/SJ3.018.jpg",
     "SJ3 19": "static/floor_plans/SJ3.19.jpg",
-    # More room codes to be added
+
+    "SJ5 01": "static/floor_plans/SJ5.01.jpg",
+    "SJ5 03": "static/floor_plans/SJ5.03.jpg",
+    "SJ5 04": "static/floor_plans/SJ5.04.jpg",
+    "SJ5 20": "static/floor_plans/SJ5.20.jpg",
 }
 
 @app.route('/')
