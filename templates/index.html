@@ -16,9 +16,17 @@
     <form id="search-form">
 <div class="centerinputfield">
         <input type="text" id="room-code" name="room-code" placeholder="Enter Room Code" required>
+        <div class="buttoncenter">
         <button type="submit" id="button">Search</button>
+        </div>
 </div>
     </form>
+    <div class="note">
+        <h3>NB:</h3>
+        <p>SJ: This part of the code refers to the building. In this case, Sparck Jones.</p>
+        <p>The first number: This indicates the floor on which the room is located. Example, ‘1’ means the room is on the first floor</p>
+        <p>The second number: This represents the room number. Example, '01’ is a specific room within the Sparck Jones Building on the first floor</p>
+    </div>
         </div>
     <div id="floor-plan-container" style="display: none;">
         <h2>Floor Plan:</h2>
@@ -27,6 +35,7 @@
 </div>
 </div>
     <script>
+
         document.getElementById("search-form").onsubmit = function (event) {
             event.preventDefault();
             const roomCode = document.getElementById("room-code").value;
@@ -42,6 +51,11 @@
                     }
                 });
         };
+<!--        window.onload = function(){-->
+<!--            alert("NB SJ: This part of the code refers to the building. In this case, Sparck Jones");-->
+<!--        };-->
+
+
     </script>
 </body>
 </html>
