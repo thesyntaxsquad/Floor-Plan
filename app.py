@@ -4,6 +4,7 @@ import os
 app = Flask(__name__)
 
 # mapping of room codes to floor plan images
+#
 floor_plans = {
     "SJ2 01": "static/floor_plans/SJ2.01.jpg",
     "SJ2 03": "static/floor_plans/SJ2.03.jpg",
